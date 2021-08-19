@@ -1,16 +1,7 @@
 //function overloading
 
-function string(parameter1) {  //a is function parameter
+let string=(parameter1)=> { 
   return parameter1;
-}
-function string(parameter2) {
-  return parameter2; //int
-}
-function string(parameter3) {
-  return parameter3; //float
-}
-function string(parameter4) {
-  return parameter4;//boolean
 }
 console.log(string("hi")); //function arguments
 console.log(string(23));
@@ -43,7 +34,5 @@ console.log(clonedObj);
 let obj1 = { a: 10 };
 var obj2 = { b: 20 };
 Object.assign(obj1, obj2);
-console.log(new_obj);
-console.log("the value of obj1 is");
 console.log(obj1);
 
