@@ -1,5 +1,5 @@
 //arguments
-function argCheck(parameter1, parameter2, parameter3) {
+let argCheck = (parameter1, parameter2, parameter3) => {
     if (parameter1 === undefined) {
         parameter1 = 6;
     }
@@ -15,13 +15,13 @@ function argCheck(parameter1, parameter2, parameter3) {
 console.log(argCheck());
 
 //execution context 
-function myFunction1() {
+let myFunction1 = () => {
     return "Hello";
 }
-function myFunction2() {
+let myFunction2 = () => {
     return myFunction1();
 }
-function myFunction3() {
+let myFunction3 = () => {
     return myFunction2();
 }
 
@@ -29,10 +29,20 @@ console.log(myFunction3());
 
 //execution scope
 //global scope
-var myName = 'Ajith';
+let myName = 'Ajith';
 
-function logName() {
+let logName = () => {
     return myName;
 }
 
 console.log(logName());
+//global context
+let blog = 'ajith';
+
+let logBlog = () => {
+    let blog = "hello";
+    console.log(blog);
+}
+logBlog();
+
+
