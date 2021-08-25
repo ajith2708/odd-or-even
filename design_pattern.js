@@ -5,21 +5,21 @@ let obj = {
     Name: "Ajith",
     college: "MCE"
 };
+obj.Name ="Mani"
 console.log(obj.Name);
 
 //2.Named accessor properties (get & set)
 let object = {
     get prop() {
-        return "getter";
+        return this.college;
     },
     set prop(value) {
-        console.log(" setter =  " + value);
-
+            this.Name=value;
     }
 }
-
-console.log(object.prop);
-console.log(object.prop = "value assigned");
+object.prop = "Raj"
+console.log(obj.college);
+console.log(object.Name);
 
 //defining Multiple properties
 const object1 = {};
@@ -35,7 +35,7 @@ console.log(object1.property1);
 
 //-------------------------------------------------------------------------
 // constructor function     
-function Person(name, age, gender, greet) {
+function Person(name, age, gender) {
 
     // assigning  parameter values to the calling object
     this.name = name,
@@ -56,26 +56,23 @@ let Bicycle = function (brand) {
     this.brand = brand;
 };
 
-Bicycle.prototype = {
-    goForward: function (percent) {
+Bicycle.prototype.goForward= function(percent) {
         percent = ' Bicycle Moving forward at ' + percent + ' percent speed!';
         return percent;
-    }
-};
+    };
 let bike = new Bicycle('ProdecoTech');
 let speed = bike.goForward(100);
+console.log(bike);
+console.log(speed);
 //-------------------------------------------------------------------------------
 //Durable Constructor Pattern is similar to the Factory Pattern and Parasitic Constructor Pattern
 
 function Car(make, model, year) {
     let durable = new Object();
 
-    // private variable
-    let condition = 'used';
-
     // public method
     durable.sayCar = function () {
-        console.log('I have a ' + condition + ' ' + year + ' ' + make + ' ' + model + '.');
+        console.log('I have a '  + ' ' + year + ' ' + make + ' ' + model + '.');
     };
 
     return durable;
